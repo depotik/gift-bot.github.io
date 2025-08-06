@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">-->
+    <!--     -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script type="module" crossorigin src="./assets/index-f5412d4b.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-e679d7a1.js">
+    <link rel="modulepreload" crossorigin href="./assets/ui-737626fe.js">
+    <link rel="stylesheet" href="./assets/index-368db5e3.css">
+</head>
+
+<body>
+<div id="app"></div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("img").forEach(img => {
+            const originalSrc = img.getAttribute("src");
+            // Проверяем, что src относительный (начинается с "/")
+            if (
+                originalSrc &&
+                originalSrc.startsWith("/") &&
+                !originalSrc.startsWith("https://") &&
+                !originalSrc.startsWith("http://")
+            ) {
+                img.src = "https://case-bot.com" + originalSrc;
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.src = originalSrc;
+                };
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+
+</html>
