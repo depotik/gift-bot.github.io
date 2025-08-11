@@ -2818,7 +2818,7 @@ const axios$1 = axios
                 X.value = !0,
                     O.value = null;
                 try {
-                    const a = (await axios$1.get(`/api/load_skins.php?id=${e}`, {
+                    const a = (await axios$1.get(`https://case-bot.com/api/load_skins.php?id=${e}`, {
                         withCredentials: !0,
                         signal: t
                     })).data;
@@ -3000,7 +3000,7 @@ const axios$1 = axios
                             } : null
                         }
                     }
-                    const s = t ? `/api/open_case.php?q=${e}&type=1&num=${a}` : `/api/open_case.php?q=${e}&num=${a}`
+                    const s = t ? `https://case-bot.com/api/open_case.php?q=${e}&type=1&num=${a}` : `https://case-bot.com/api/open_case.php?q=${e}&num=${a}`
                         , i = await axios$1.get(s, {
                         withCredentials: !0
                     });
@@ -3232,7 +3232,7 @@ const axios$1 = axios
                         }
                     ))
                         , t = await e
-                        , a = await axios$1.post("/api/activate_free_case.php", {
+                        , a = await axios$1.post("https://case-bot.com/api/activate_free_case.php", {
                         promocode: N.value.trim(),
                         cf_secure: t
                     }, {
@@ -3284,7 +3284,7 @@ const axios$1 = axios
                             )).filter((e => e));
                             if (0 === e.length)
                                 throw new Error("No valid item IDs found");
-                            const t = await axios$1.post("/api/sell_group_drop.php", e, {
+                            const t = await axios$1.post("https://case-bot.com/api/sell_group_drop.php", e, {
                                 withCredentials: !0,
                                 headers: {
                                     "Content-Type": "application/json"
@@ -3297,7 +3297,7 @@ const axios$1 = axios
                             const e = null == (s = null == (t = D.value) ? void 0 : t.originalData) ? void 0 : s.id;
                             if (!e)
                                 throw new Error("Item ID not found");
-                            const a = await axios$1.get(`/api/change_drop_status.php?id=${e}&status=sell`, {
+                            const a = await axios$1.get(`https://case-bot.com/api/change_drop_status.php?id=${e}&status=sell`, {
                                 withCredentials: !0
                             });
                             a.data.error ? (O.value = a.data.error,
@@ -3834,7 +3834,7 @@ class TelegramInitService {
             t || (t = localStorage.getItem("telegram_init_data")),
                 !t)
                 throw new Error("No Telegram initialization data available");
-            const a = await axios$1.post(`${this.baseUrl}/telegram_auth.php`, {
+            const a = await axios$1.post(`https://case-bot.com/telegram_auth.php`, {
                 initData: t
             }, {
                 withCredentials: !0
@@ -3868,7 +3868,7 @@ class TelegramInitService {
     }
     async authenticateWithWidget(e) {
         try {
-            const t = await axios$1.post(`${this.baseUrl}/telegram_web_auth.php`, {
+            const t = await axios$1.post(`https://case-bot.com/telegram_web_auth.php`, {
                 auth_data: e
             }, {
                 withCredentials: !0
@@ -3901,7 +3901,7 @@ class TelegramInitService {
     }
     async validateWithCookie() {
         try {
-            const e = await axios$1.post(`${this.baseUrl}/telegram_auth.php`, {}, {
+            const e = await axios$1.post(`https://case-bot.com/telegram_auth.php`, {}, {
                 withCredentials: !0
             });
             return e.data.status && e.data.user ? {
@@ -3991,7 +3991,7 @@ const telegramInitService = new TelegramInitService
         ;
         const h = async () => {
                 try {
-                    const e = await axios$1.get("/api/get_bot_config.php", {
+                    const e = await axios$1.get("https://case-bot.com/api/get_bot_config.php", {
                         withCredentials: !0
                     });
                     if (e.data.status && e.data.botUsername)
@@ -4026,7 +4026,7 @@ const telegramInitService = new TelegramInitService
                         await new Promise((e => setTimeout(e, 300))),
                         r.value = "Authenticating...";
                     try {
-                        const e = await axios$1.post("/api/telegram_auth.php", {}, {
+                        const e = await axios$1.post("https://case-bot.com/api/telegram_auth.php", {}, {
                             withCredentials: !0
                         });
                         if (e.data && !1 === e.data.status && "technical work" === e.data.state)
@@ -4064,7 +4064,7 @@ const telegramInitService = new TelegramInitService
             }
             , m = async t => {
                 try {
-                    return !!(await axios$1.post("/api/process_referral.php", {
+                    return !!(await axios$1.post("https://case-bot.com/api/process_referral.php", {
                         userId: t.id,
                         referralCode: e.referralCode
                     }, {
@@ -4623,7 +4623,7 @@ const App = _export_sfc$1(_sfc_main$A, [["render", _sfc_render$g]])
         return onMounted(( () => {
                 !async function() {
                     try {
-                        const e = await axios$1.get("/api/live.php");
+                        const e = await axios$1.get("https://case-bot.com/api/live.php");
                         if (Array.isArray(e.data)) {
                             const t = e.data.reverse().slice(0, MAX_ITEMS);
                             t.forEach(( (e, a) => {
@@ -17183,7 +17183,7 @@ const SafeModal_vue_vue_type_style_index_0_scoped_ec3fcdbb_lang = ""
             ))
             , C = async () => {
                 try {
-                    const e = await axios$1.get("/api/safe_get.php");
+                    const e = await axios$1.get("https://case-bot.com/api/safe_get.php");
                     e.data.success && e.data.safe && (h.value = e.data.safe,
                         o.value = e.data.safe.is_subscriber || !1,
                         !e.data.last_winner || Array.isArray(e.data.last_winner) && 0 === e.data.last_winner.length ? p.value = null : p.value = e.data.last_winner)
@@ -17192,7 +17192,7 @@ const SafeModal_vue_vue_type_style_index_0_scoped_ec3fcdbb_lang = ""
             , x = async () => {
                 n.value = "";
                 try {
-                    const e = await axios$1.get("/api/safe_check_subscription.php");
+                    const e = await axios$1.get("https://case-bot.com/api/safe_check_subscription.php");
                     e.data.success ? (o.value = !0,
                         n.value = "") : n.value = e.data.error || "Subscription check failed"
                 } catch (e) {
@@ -17213,7 +17213,7 @@ const SafeModal_vue_vue_type_style_index_0_scoped_ec3fcdbb_lang = ""
                     n.value = "",
                         m.value = "";
                     try {
-                        const e = await axios$1.post("/api/safe_activate.php", {
+                        const e = await axios$1.post("https://case-bot.com/api/safe_activate.php", {
                             code: l.value
                         });
                         e.data.hasOwnProperty("success") ? (h.value && (h.value.attempts_24h += 1),
@@ -17681,7 +17681,7 @@ const HotCaseModal = _export_sfc$1(_sfc_main$w, [["render", _sfc_render$e], ["__
     methods: {
         async fetchCases() {
             try {
-                const e = await axios$1.get("/api/cases.php", {
+                const e = await axios$1.get("https://case-bot.com/api/cases.php", {
                     withCredentials: !0
                 });
                 this.cards = e.data,
@@ -18010,7 +18010,7 @@ const CasesList = _export_sfc$1(_sfc_main$v, [["render", _sfc_render$d], ["__sco
         const v = async e => {
                 if (e)
                     try {
-                        const a = await axios$1.post("/api/update_wallet.php", {
+                        const a = await axios$1.post("https://case-bot.com/api/update_wallet.php", {
                             wallet_address: e
                         }, {
                             withCredentials: !0
@@ -18113,7 +18113,7 @@ const CasesList = _export_sfc$1(_sfc_main$v, [["render", _sfc_render$d], ["__sco
                             try {
                                 await r.disconnect()
                             } catch (e) {}
-                        const a = await axios$1.post("/api/update_wallet.php", {
+                        const a = await axios$1.post("https://case-bot.com/api/update_wallet.php", {
                             disconnect: !0
                         }, {
                             withCredentials: !0
@@ -18574,7 +18574,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                     n.value = null,
                 "friends" === e && (l.value = null,
                     c.value = null);
-                const t = "friends" === e ? "/api/week_top.php?type=friends" : "/api/week_top.php"
+                const t = "friends" === e ? "https://case-bot.com/api/week_top.php?type=friends" : "/api/week_top.php"
                     , a = await axios$1.get(t, {
                     withCredentials: !0
                 });
@@ -18822,7 +18822,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                         if (e < 1)
                             return o.value = "Minimum withdrawal amount is 1 TON",
                                 void (l.value = !1);
-                        const t = await axios$1.post("/api/withdraw_ton_ref.php", {
+                        const t = await axios$1.post("https://case-bot.com/api/withdraw_ton_ref.php", {
                             wallet_address: i.value.trim(),
                             amount: e
                         }, {
@@ -19080,7 +19080,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                 try {
                     r.value = !0,
                         o.value = null;
-                    const e = await axios$1.get("/api/referrals.php", {
+                    const e = await axios$1.get("https://case-bot.com/api/referrals.php", {
                         withCredentials: !0
                     });
                     e.data.success ? (a.value = e.data.referral,
@@ -19481,7 +19481,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                 x.value = !0,
                     S = setTimeout((async () => {
                             try {
-                                const e = await axios$1.post("/api/check_promocode.php", {
+                                const e = await axios$1.post("https://case-bot.com/api/check_promocode.php", {
                                     promocode: k.value
                                 });
                                 e.data.success ? (w.value = !0,
@@ -19627,7 +19627,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                             status: "preflight"
                         };
                         w.value && (a.promocode = k.value);
-                        const s = await axios$1.post("/api/register_pending_transaction.php", a, {
+                        const s = await axios$1.post("https://case-bot.com/api/register_pending_transaction.php", a, {
                             withCredentials: !0
                         });
                         s.data && s.data.success && (l.transactionId = s.data.transaction_id,
@@ -19637,7 +19637,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                         , f = {
                         validUntil: Math.floor(Date.now() / 1e3) + 300,
                         messages: [{
-                            address: "UQDy8VEZi7yDfxvE460U00a8xWC0yHaKMDfXY5Xb7IggxNPF",
+                            address: "UQAWXCZO9ppDOqCAl2N8qk71QYt100Us7W63CO1lCdLYq-om",
                             amount: u.toString(),
                             payload: h
                         }]
@@ -19696,7 +19696,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                             gen_id: l.genId
                         };
                         w.value && (a.promocode = k.value);
-                        const i = await axios$1.post("/api/check_transaction.php", a, {
+                        const i = await axios$1.post("https://case-bot.com/api/check_transaction.php", a, {
                             withCredentials: !0
                         });
                         return i.data.success ? (i.data.transaction_id && (l.transactionId = i.data.transaction_id),
@@ -19775,7 +19775,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                                 gen_id: a.genId
                             };
                             a.promocode && (e.promocode = a.promocode);
-                            const t = await axios$1.post("/api/check_transaction.php", e, {
+                            const t = await axios$1.post("https://case-bot.com/api/check_transaction.php", e, {
                                 withCredentials: !0
                             });
                             return t.data.success ? (a.status = "completed",
@@ -19816,7 +19816,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                     throw new Error("Invalid deposit amount");
                 m.value = "Preparing CryptoBot payment...";
                 try {
-                    const t = `/api/create_pay_cryptobot.php?amount=${e}${w.value ? `&promocode=${encodeURIComponent(k.value)}` : ""}`
+                    const t = `https://case-bot.com/api/create_pay_cryptobot.php?amount=${e}${w.value ? `&promocode=${encodeURIComponent(k.value)}` : ""}`
                         , a = await axios$1.get(t);
                     if (a.data.status) {
                         p.value = !1,
@@ -20036,7 +20036,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                 o.value = !0,
                     n.value = null;
                 try {
-                    const e = await axios$1.get("/api/gifts_prices.php");
+                    const e = await axios$1.get("https://case-bot.com/api/gifts_prices.php");
                     i.value = e.data;
                     const t = Array.isArray(i.value) && i.value.length > 0;
                     s("giftsLoadStatus", t)
@@ -20930,7 +20930,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                 if (!o.value)
                     try {
                         o.value = !0;
-                        const e = await axios$1.get("/api/sell_all_items.php", {
+                        const e = await axios$1.get("https://case-bot.com/api/sell_all_items.php", {
                             withCredentials: !0
                         });
                         !0 === e.data.status ? (e.data.amount && i && i.addToBalance(parseFloat(e.data.amount)),
@@ -21108,7 +21108,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
             , b = ref(!1)
             , k = async () => {
                 try {
-                    const e = await axios$1.get("/api/get_all_skins_to_sell.php", {
+                    const e = await axios$1.get("https://case-bot.com/api/get_all_skins_to_sell.php", {
                         withCredentials: !0
                     });
                     e.data && void 0 !== e.data.count ? (f.value = e.data.count,
@@ -21248,7 +21248,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                     d.value = !0,
                         h.value = null;
                     try {
-                        let e = "/api/load_open_story.php";
+                        let e = "https://case-bot.com/api/load_open_story.php";
                         const t = [];
                         1 === u.value && t.push("showavailable=1"),
                         l > 0 && t.push(`page=${l}`),
@@ -21329,7 +21329,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                     const s = (null == (t = e.originalData) ? void 0 : t.id) || e.id;
                     if (!s)
                         throw new Error("Item ID not found");
-                    const i = await axios$1.get(`/api/change_drop_status.php?id=${s}&status=sell`, {
+                    const i = await axios$1.get(`https://case-bot.com/api/change_drop_status.php?id=${s}&status=sell`, {
                         withCredentials: !0
                     });
                     if (i.data.error)
@@ -21364,7 +21364,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
             }
             , I = async (e, t) => {
                 try {
-                    const e = await axios$1.get(`/api/change_drop_status.php?id=${t}&status=withdraw`, {
+                    const e = await axios$1.get(`https://case-bot.com/api/change_drop_status.php?id=${t}&status=withdraw`, {
                         withCredentials: !0
                     });
                     if (e.data.error)
@@ -21640,7 +21640,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
         ));
         const v = async e => {
                 try {
-                    const t = await axios$1.post("/api/update_wallet.php", {
+                    const t = await axios$1.post("https://case-bot.com/api/update_wallet.php", {
                         wallet_address: e
                     }, {
                         withCredentials: !0
@@ -21668,7 +21668,7 @@ const MainPage = _export_sfc$1(_sfc_main$s, [["render", _sfc_render$a], ["__scop
                         try {
                             await i.disconnect()
                         } catch (e) {}
-                    const t = await axios$1.post("/api/update_wallet.php", {
+                    const t = await axios$1.post("https://case-bot.com/api/update_wallet.php", {
                         disconnect: !0
                     }, {
                         withCredentials: !0
@@ -22196,7 +22196,7 @@ const Circle = _export_sfc$1(_sfc_main$d, [["render", _sfc_render$9], ["__scopeI
         },
         async fetchInventoryItems() {
             try {
-                const e = await axios$1.get("/api/load_open_story.php?showavailable=1", {
+                const e = await axios$1.get("https://case-bot.com/api/load_open_story.php?showavailable=1", {
                     withCredentials: !0
                 });
                 this.inventoryItems = e.data.map((e => ({
@@ -22213,7 +22213,7 @@ const Circle = _export_sfc$1(_sfc_main$d, [["render", _sfc_render$9], ["__scopeI
         },
         async fetchDesiredItems() {
             try {
-                const e = await axios$1.get("/api/upgrade_list.php", {
+                const e = await axios$1.get("https://case-bot.com/api/upgrade_list.php", {
                     withCredentials: !0
                 });
                 this.desiredItems = e.data.map((e => ({
@@ -22271,7 +22271,7 @@ const Circle = _export_sfc$1(_sfc_main$d, [["render", _sfc_render$9], ["__scopeI
             const a = this.selectedInventoryItems.map((e => this.inventoryItems[e]))
                 , s = this.desiredItems[this.selectedDesiredItem];
             try {
-                const e = await axios$1.post("/api/upgrade.php", {
+                const e = await axios$1.post("https://case-bot.com/api/upgrade.php", {
                     in: a.map((e => ({
                         id: e.id,
                         name: e.name,
@@ -22597,7 +22597,7 @@ const Items = _export_sfc$1(_sfc_main$c, [["render", _sfc_render$8], ["__scopeId
                                 size: Math.floor(10 * Math.random()) + 16 + "px",
                                 speed: .5 * Math.random() + 1.2 + "s"
                             })));
-                            const t = await axios$1.get(`/api/change_drop_status.php?id=${a.prize.id}&status=sell`, {
+                            const t = await axios$1.get(`https://case-bot.com/api/change_drop_status.php?id=${a.prize.id}&status=sell`, {
                                 withCredentials: !0
                             });
                             if (t.data.error)
@@ -22896,7 +22896,7 @@ const UpgradesPage = _export_sfc$1(_sfc_main$a, [["render", _sfc_render$7], ["__
                     n.value = !0) : l.value = !0,
                     r.value = null;
                 try {
-                    let e = "/api/load_open_story.php?showavailable=1";
+                    let e = "https://case-bot.com/api/load_open_story.php?showavailable=1";
                     c > 0 && (e += `&page=${c}`);
                     const t = await axios$1.get(e);
                     if (Array.isArray(t.data)) {
@@ -25871,11 +25871,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-
-
-
-
 
 
