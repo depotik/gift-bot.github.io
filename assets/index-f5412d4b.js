@@ -3251,7 +3251,7 @@ const axios$1 = axios
                 }
             }
             , re = () => {
-                window.open("https://t.me/case", "_blank")
+                window.open("https://t.me/gifterint_official_bot", "_blank")
             }
             , oe = () => {
                 F.value || L.value || (F.value = !0,
@@ -3998,7 +3998,7 @@ const telegramInitService = new TelegramInitService
                         return d.value = e.data.botUsername,
                             !0
                 } catch (e) {
-                    d.value = "giterint-official_bot"
+                    d.value = "https://t.me/gifterint_official_bot"
                 }
                 return !1
             }
@@ -4107,7 +4107,7 @@ const telegramInitService = new TelegramInitService
                 ,
                 maintenanceMode: l,
                 openTelegramChannel: () => {
-                    window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp.openTelegramLink("https://t.me/case") : window.open("https://t.me/case", "_blank")
+                    window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp.openTelegramLink("https://t.me/gifterint_official_bot") : window.open("https://t.me/gifterint_official_bot", "_blank")
                 }
                 ,
                 showLoginWidget: c,
@@ -17200,7 +17200,7 @@ const SafeModal_vue_vue_type_style_index_0_scoped_ec3fcdbb_lang = ""
                 }
             }
             , S = () => {
-                window.open("https://t.me/case", "_blank")
+                window.open("https://t.me/gifterint_official_bot", "_blank")
             }
             , E = () => {
                 c.value && c.value.focus()
@@ -25824,7 +25824,7 @@ const JackpotMain = _export_sfc$1(_sfc_main, [["render", _sfc_render], ["__scope
 })
     , Variables = ""
     , styles = ""
-    , domains = [""];
+    , domains = ["https://gifter-bot.com"];
 function getRandomDomain() {
     const e = Math.floor(Math.random() * domains.length);
     return domains[e]
