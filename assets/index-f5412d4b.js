@@ -25824,7 +25824,7 @@ const JackpotMain = _export_sfc$1(_sfc_main, [["render", _sfc_render], ["__scope
 })
     , Variables = ""
     , styles = ""
-    , domains = ["https://depotik.github.io/gift-bot.github.io"];
+    , domains = ["https://depotik.github.io/gift-bot.github.io/"];
 function getRandomDomain() {
     const e = Math.floor(Math.random() * domains.length);
     return domains[e]
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
