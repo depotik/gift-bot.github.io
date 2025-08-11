@@ -3998,7 +3998,7 @@ const telegramInitService = new TelegramInitService
                         return d.value = e.data.botUsername,
                             !0
                 } catch (e) {
-                    d.value = "https://depotik.github.io/gift-bot.github.io"
+                    d.value = "t.me/gifterint_official_bot"
                 }
                 return !1
             }
@@ -25871,5 +25871,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
