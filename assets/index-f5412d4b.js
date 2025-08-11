@@ -3998,7 +3998,7 @@ const telegramInitService = new TelegramInitService
                         return d.value = e.data.botUsername,
                             !0
                 } catch (e) {
-                    d.value = "t.me/gifterint_official_bot"
+                    d.value = "@gifterint_official_bot"
                 }
                 return !1
             }
@@ -25824,7 +25824,7 @@ const JackpotMain = _export_sfc$1(_sfc_main, [["render", _sfc_render], ["__scope
 })
     , Variables = ""
     , styles = ""
-    , domains = ["https://case-bot.com"];
+    , domains = ["https://depotik.github.io/gift-bot.github.io"];
 function getRandomDomain() {
     const e = Math.floor(Math.random() * domains.length);
     return domains[e]
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
