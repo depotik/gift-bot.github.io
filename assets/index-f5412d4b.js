@@ -3998,7 +3998,7 @@ const telegramInitService = new TelegramInitService
                         return d.value = e.data.botUsername,
                             !0
                 } catch (e) {
-                    d.value = "gifterint_official_bot"
+                    d.value = "@gifterint_official_bot"
                 }
                 return !1
             }
@@ -4176,7 +4176,7 @@ function _sfc_render$h(e, t, a, s, i, r) {
                 onClick: t[0] || (t[0] = (...e) => s.openTelegramChannel && s.openTelegramChannel(...e))
             }, t[2] || (t[2] = [createBaseVNode("div", {
                 class: "button-label"
-            }, "Open @gifter", -1)]))])])])) : (openBlock(),
+            }, "Open @gifterint_official_bot", -1)]))])])])) : (openBlock(),
             createElementBlock("div", _hoisted_5$q, t[10] || (t[10] = [createStaticVNode('<header class="loader-header" data-v-05a491e2><div class="logo-container" data-v-05a491e2><img src="/images/effects/loader.png" alt="Gift Cases by TON Logo" class="floating-logo" data-v-05a491e2></div><h1 class="loader-title" data-v-05a491e2>Gift Cases by TON</h1><p class="loader-copyright" data-v-05a491e2>Copyright © 2025</p></header>', 1)]))), s.error && !s.maintenanceMode ? (openBlock(),
             createElementBlock("div", _hoisted_6$o, [t[11] || (t[11] = createBaseVNode("div", {
                 class: "error-icon"
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
