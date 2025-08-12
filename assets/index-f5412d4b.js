@@ -1313,7 +1313,7 @@ const resolveConfig = e => {
             s.cancelToken && s.cancelToken.subscribe(o),
             s.signal && (s.signal.aborted ? o() : s.signal.addEventListener("abort", o)));
             const g = parseProtocol(s.url);
-            g && -1 === platform.protocols.indexOf(g) ? a(new AxiosError("Unsupported protocol " + g + ":",AxiosError.ERR_BAD_REQUEST,e)):f.post(i || null)
+            g && -1 === platform.protocols.indexOf(g) ? a(new AxiosError("Unsupported protocol " + g + ":",AxiosError.ERR_BAD_REQUEST,e)) : f.post(i || null)
         }
     ))
 }
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
