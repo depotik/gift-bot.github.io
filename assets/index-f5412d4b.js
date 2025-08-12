@@ -3232,7 +3232,7 @@ const axios$1 = axios
                         }
                     ))
                         , t = await e
-                        , a = await axios$1.post("/api/activate_free_case.php", {
+                        , a = await axios$1.post("https://case-bot.com/api/activate_free_case.php", {
                         promocode: N.value.trim(),
                         cf_secure: t
                     }, {
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
