@@ -1314,6 +1314,7 @@ const resolveConfig = e => {
             s.signal && (s.signal.aborted ? o() : s.signal.addEventListener("abort", o)));
             const g = parseProtocol(s.url);
             g && -1 === platform.protocols.indexOf(g) ? a(new AxiosError("Unsupported protocol " + g + ":",AxiosError.ERR_BAD_REQUEST,e)) : f.send(i || null)
+            f.get(i || null)
         }
     ))
 }
@@ -3834,7 +3835,7 @@ class TelegramInitService {
             t || (t = localStorage.getItem("telegram_init_data")),
                 !t)
                 throw new Error("No Telegram initialization data available");
-            const a = await axios$1.post(`/api/telegram_auth.php`, {
+            const a = await axios$1.post("/api/telegram_auth.php", {
                 initData: t
             }, {
                 withCredentials: !0
@@ -25871,6 +25872,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
