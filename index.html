@@ -27,31 +27,9 @@
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll("img").forEach(img => {
-            const originalSrc = img.getAttribute("src");
-            // Проверяем, что src относительный (начинается с "/")
-            if (
-                originalSrc &&
-                originalSrc.startsWith("/") &&
-                !originalSrc.startsWith("https://") &&
-                !originalSrc.startsWith("http://")
-            ) {
-                img.src = "https://case-bot.com" + originalSrc;
-                img.onerror = function() {
-                    this.onerror = null;
-                    this.src = originalSrc;
-                };
-            }
-        });
-    });
-
-</script>
-
-
 </body>
 
 
 </html>
+
 
