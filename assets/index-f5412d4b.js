@@ -3901,7 +3901,7 @@ class TelegramInitService {
     }
     async validateWithCookie() {
         try {
-            const e = await axios$1.post(./telegram_auth.php`, {}, {
+            const e = await axios$1.post('./telegram_auth.php`, {}, {
                 withCredentials: !0
             });
             return e.data.status && e.data.user ? {
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
