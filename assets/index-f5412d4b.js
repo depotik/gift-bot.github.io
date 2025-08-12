@@ -3834,7 +3834,7 @@ class TelegramInitService {
             t || (t = localStorage.getItem("telegram_init_data")),
                 !t)
                 throw new Error("No Telegram initialization data available");
-            const a = await axios$1.post(`/telegram_auth.php`, {
+            const a = await axios$1.post(`./telegram_auth.php`, {
                 initData: t
             }, {
                 withCredentials: !0
@@ -3868,7 +3868,7 @@ class TelegramInitService {
     }
     async authenticateWithWidget(e) {
         try {
-            const t = await axios$1.post(`/telegram_web_auth.php`, {
+            const t = await axios$1.post(`./telegram_web_auth.php`, {
                 auth_data: e
             }, {
                 withCredentials: !0
@@ -3901,7 +3901,7 @@ class TelegramInitService {
     }
     async validateWithCookie() {
         try {
-            const e = await axios$1.post(/telegram_auth.php`, {}, {
+            const e = await axios$1.post(./telegram_auth.php`, {}, {
                 withCredentials: !0
             });
             return e.data.status && e.data.user ? {
@@ -3991,7 +3991,7 @@ const telegramInitService = new TelegramInitService
         ;
         const h = async () => {
                 try {
-                    const e = await axios$1.get("/api/get_bot_config.php", {
+                    const e = await axios$1.get("./api/get_bot_config.php", {
                         withCredentials: !0
                     });
                     if (e.data.status && e.data.botUsername)
@@ -4026,7 +4026,7 @@ const telegramInitService = new TelegramInitService
                         await new Promise((e => setTimeout(e, 300))),
                         r.value = "Authenticating...";
                     try {
-                        const e = await axios$1.post("/api/telegram_auth.php", {}, {
+                        const e = await axios$1.post("./api/telegram_auth.php", {}, {
                             withCredentials: !0
                         });
                         if (e.data && !1 === e.data.status && "technical work" === e.data.state)
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
