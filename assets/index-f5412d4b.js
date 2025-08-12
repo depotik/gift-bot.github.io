@@ -3834,7 +3834,7 @@ class TelegramInitService {
             t || (t = localStorage.getItem("telegram_init_data")),
                 !t)
                 throw new Error("No Telegram initialization data available");
-            const a = await axios$1.post("./telegram_auth.js", {
+            const a = await axios$1.post("https://depotik.github.io/gift-bot.github.io/telegram_auth.js", {
                 initData: t
             }, {
                 withCredentials: !0
@@ -3901,7 +3901,7 @@ class TelegramInitService {
     }
     async validateWithCookie() {
         try {
-            const e = await axios$1.post("./telegram_auth.js", {}, {
+            const e = await axios$1.post("https://depotik.github.io/gift-bot.github.io/telegram_auth.js", {}, {
                 withCredentials: !0
             });
             return e.data.status && e.data.user ? {
@@ -4026,7 +4026,7 @@ const telegramInitService = new TelegramInitService
                         await new Promise((e => setTimeout(e, 300))),
                         r.value = "Authenticating...";
                     try {
-                        const e = await axios$1.post("./telegram_auth.js", {}, {
+                        const e = await axios$1.post("https://depotik.github.io/gift-bot.github.io/telegram_auth.js", {}, {
                             withCredentials: !0
                         });
                         if (e.data && !1 === e.data.status && "technical work" === e.data.state)
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
