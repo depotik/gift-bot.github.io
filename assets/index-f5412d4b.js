@@ -4198,7 +4198,7 @@ function _sfc_render$h(e, t, a, s, i, r) {
                 class: "loading-spinner"
             }, null, -1)), createBaseVNode("p", _hoisted_10$k, toDisplayString(s.loadingText), 1)])), t[15] || (t[15] = createBaseVNode("div", {
             class: "loader-social-handle"
-        }, "@gifterint_official_bot", -1))])
+        }, "@gifteringch", -1))])
 }
 const TelegramLoader = _export_sfc$1(_sfc_main$B, [["render", _sfc_render$h], ["__scopeId", "data-v-05a491e2"]])
     , state = reactive({
@@ -25871,6 +25871,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 
 
 
