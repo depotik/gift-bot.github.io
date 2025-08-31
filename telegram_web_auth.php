@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: POST, GET");
 header("Content-Type: application/json");
 
 // Токен твоего бота
-$bot_token = "8244598423:AAEOFyBM3ljSJO2S6mSIBFpuDAuv5LN4Bfk";
+$bot_token = "8244598423:AAFLcheRyzJ7ugj2nfCh-LKAaCCB37CTkdc";
 
 // Читаем initData из POST
 $init_data = $_POST['initData'] ?? '';
@@ -39,3 +39,4 @@ if (!checkTelegramAuthorization($auth_data, $bot_token)) {
 }
 
 echo json_encode(["ok" => true, "user" => $auth_data]);
+
